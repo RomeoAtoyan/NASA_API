@@ -4,7 +4,7 @@ function displayData() {
   let spaceimg = document.getElementById('spaceimg');
   let date = document.getElementById('date');
   let explanation = document.getElementById('explanation');
-  let author = document.getElementById('author')
+  let author = document.getElementById('author');
   fetch(
     "https://api.nasa.gov/planetary/apod?api_key=dPdPSJldELdz2FThThVbVNdzFSEj7LAY9I0xsalx"
   )
@@ -21,6 +21,10 @@ function displayData() {
       date.innerHTML = date_;
       author.innerHTML = author_;
       spaceimg.src = image_;
+
+      if (!author_) {
+       author.innerHTML = ""
+      }
         
     })
 }
